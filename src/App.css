@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  height: 600px;
+  width: 600px;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 25px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h3{
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gray);
+}
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+}
+.icon img {
+  width: 20px;
+}
+.input {
+  display: flex;
+
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+}
+.input input {
+  width: 100%;
+  height: 70px;
+  margin: 10px 0;
+
+  border-radius: 10px;
+  padding: 5px 20px;
+  font-size: 25px;
+  text-align: right;
+  font-weight: 600;
+  background-color: var(--light);
+  border: 4px solid var(--border-color);
+}
+.input-down-button {
+  width: 100px;
+  border-radius: 10px;
+  height: 40px;
+  font-weight: 600;
+  background-color: #f8f8f8;
+  border: none;
+  margin: 0px 10px;
+}
+.input-down {
+  display: flex;
+  justify-content: space-between;
+}
+.inputDownLable {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gray);
 }
 
-.App-link {
-  color: #61dafb;
+.radio_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="radio"] {
+  appearance: none;
+  display: none;
+}
+
+.radio_container label {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light);
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: linear 0.3s;
+  color: var(--gray);
+  font-weight: 800;
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--secondary-color);
+  color: #000;
+  font-weight: 700;
+  width: 100px;
+  font-size: 14px;
+  transition: 0.3s;
+  border: 2px solid #f8d74a;
+}
+
+.timeframe {
+  margin: 10px 0;
+}
+
+.enable {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox__system-checkbox {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.checkbox__custom-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  box-sizing: border-box;
+  width: 50px;
+  height: 30px;
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  background-color: gray;
+  transition: background-color 0.2s ease-in;
+
+}
+
+.checkbox__custom-checkbox::after {
+  content: "";
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: white;
+  transition: left 0.2s ease-in;
+}
+
+.checkbox__system-checkbox:checked + .checkbox__custom-checkbox::after {
+  left: 20px;
+}
+
+.checkbox__system-checkbox:checked + .checkbox__custom-checkbox {
+  background-color: var(--secondary-color);
+}
+
+.checkbox__system-checkbox:disabled + .checkbox__custom-checkbox {
+  opacity: 0.3;
+}
+
+.checkbox__system-checkbox:focus ~ .checkbox__label {
+  text-decoration: underline grey;
+}
+
+.tier{
+  margin: 20px 0;
+}
+.last{
+  text-align: right;
+}
+
+
+.cake{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.cake .name{
+  display: flex;
+  margin: 0 10px;
+  color: var(--gray);
+  font-weight: 700;
+}
+.cake .name img{
+  width: 20px;
+  margin:  0 10px;
+}
+.cake .checkbox__custom-checkbox {
+
+
+  height: 25px;
+width: 40px;
+
+}
+.cake .checkbox__custom-checkbox::after {
+  width: 20px;
+  height: 20px;
+}
+.cake .checkbox {
+  display: flex;
+align-items: center;
+}
+.cake .checkbox__label{
+  color: var(--gray);
+  font-weight: 700;
+  margin: 0 8px;
 }
